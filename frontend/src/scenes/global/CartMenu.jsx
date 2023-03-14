@@ -13,7 +13,7 @@ import {
 } from '../../state';
 import { useNavigate } from "react-router-dom";
 
-const REACT_ROOT_BASE_URL = process.env.REACT_ROOT_BASE_URL();
+const REACT_ROOT_BASE_URL = process.env.REACT_ROOT_BASE_URL;
 const FlexBox = styled(Box)`
     display: flex;
     justify-content: space-between;

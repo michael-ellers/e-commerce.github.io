@@ -15,7 +15,7 @@ const Item = ({ item, width }) => {
     const {
         palette: { neutral },
     } = useTheme();
-    const REACT_ROOT_BASE_URL = process.env.REACT_ROOT_BASE_URL();
+    const REACT_ROOT_BASE_URL = process.env.REACT_ROOT_BASE_URL;
 
     const { category, price, name, image } = item.attributes;
     const {
