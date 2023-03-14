@@ -28,6 +28,7 @@ const CartMenu = () => {
     const totalPrice = cart.reduce((total, item) => {
         return total + item.count * item.attributes.price;
     }, 0);
+    const REACT_ROOT_BASE_URL = process.env.REACT_ROOT_BASE_URL();
 
     return (
         <Box
@@ -75,7 +76,7 @@ const CartMenu = () => {
                                             alt={item?.name}
                                             width="123px"
                                             height="164px"
-                                            src={`http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
+                                            src={`${REACT_ROOT_BASE_URL}${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`}
                                         />
                                     </Box>
                                     <Box flex="1 1 60%">

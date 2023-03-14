@@ -15,6 +15,7 @@ const Item = ({ item, width }) => {
     const {
         palette: { neutral },
     } = useTheme();
+    const REACT_ROOT_BASE_URL = process.env.REACT_ROOT_BASE_URL();
 
     const { category, price, name, image } = item.attributes;
     const {
@@ -38,7 +39,7 @@ const Item = ({ item, width }) => {
                     alt={item.name}
                     width="300px"
                     height="400px"
-                    src={`http://localhost:1337${url}`}
+                    src={`{REACT_ROOT_BASE_URL}${url}`}
                     onClick={() => navigate(`/item/${item.id}`)}
                     style={{ cursor: 'pointer'}}
                 />

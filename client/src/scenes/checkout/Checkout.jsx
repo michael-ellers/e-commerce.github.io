@@ -47,7 +47,9 @@ const Checkout = () => {
       })),
     };
 
-    const response = await fetch("http://localhost:1337/api/orders", {
+    const REACT_ROOT_BASE_URL = process.env.REACT_ROOT_BASE_URL();
+
+    const response = await fetch(`${REACT_ROOT_BASE_URL}/api/orders`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(requestBody),

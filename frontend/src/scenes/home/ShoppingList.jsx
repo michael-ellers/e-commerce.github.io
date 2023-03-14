@@ -9,6 +9,7 @@ const ShoppingList = () => {
     const [value, setValue] = useState("all");
     const items = useSelector((state) => state.cart.items);
     const isNonMobile = useMediaQuery("(min-width:600px)");
+    const REACT_ROOT_BASE_URL = process.env.REACT_ROOT_BASE_URL();
     console.log("items", items);
 
     const handleChange = (event, newValue) => {
@@ -17,7 +18,7 @@ const ShoppingList = () => {
 
     async function getItems() {
         const items = await fetch(
-            "http://localhost:1337/api/items?populate=image",
+            `${REACT_ROOT_BASE_URL}/api/items?populate=image`,
             { method: "GET" }
         );
         const itemsJson = await items.json()
