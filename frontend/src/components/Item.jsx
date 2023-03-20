@@ -38,7 +38,7 @@ const Item = ({ item, width }) => {
                     alt={item.name}
                     width="300px"
                     height="400px"
-                    src={`${process.env("BACKEND_URL")}${url}`}
+                    src={`${process.env.BACKEND_URL}${url}`}
                     onClick={() => navigate(`/item/${item.id}`)}
                     style={{ cursor: 'pointer'}}
                 />
