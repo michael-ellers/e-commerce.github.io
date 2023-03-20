@@ -23,7 +23,7 @@ const ItemDetails = () => {
 
     async function getItem() {
         const item = await fetch(
-            `http://localhost:1337/api/items/${itemId}?populate=image`,
+            `${process.env("BACKEND_URL")}/api/items/${itemId}?populate=image`,
             { method: "GET" }
         );
         const itemJson = await item.json();
