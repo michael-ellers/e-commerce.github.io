@@ -16,8 +16,6 @@ const ItemDetails = () => {
     const [count, setCount] = useState(1);
     const [item, setItem] = useState(null);
     const [items, setItems] = useState([]);
-    const REACT_ROOT_BASE_URL = process.env.REACT_ROOT_BASE_URL;
-    console.log(REACT_ROOT_BASE_URL);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -25,7 +23,7 @@ const ItemDetails = () => {
 
     async function getItem() {
         const item = await fetch(
-            `${REACT_ROOT_BASE_URL}/api/items/${itemId}?populate=image`,
+            `http://localhost:1337/api/items/${itemId}?populate=image`,
             { method: "GET" }
         );
         const itemJson = await item.json();
